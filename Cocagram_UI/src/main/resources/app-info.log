@@ -1,0 +1,13 @@
+2021-04-27 01:10:04.703 [main] INFO  ir.sharif.aminra.Main - program started.
+2021-04-27 01:10:36.767 [JavaFX Application Thread] INFO  ir.sharif.aminra.models.ID - file lastID.txt opened.
+2021-04-27 01:10:36.781 [JavaFX Application Thread] INFO  ir.sharif.aminra.models.ID - file lastID.txt closed.
+2021-04-27 01:10:36.783 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened.
+2021-04-27 01:10:36.950 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed.
+2021-04-27 01:10:36.951 [JavaFX Application Thread] INFO  ir.sharif.aminra.controller.enterPage.SignUpController - user amin registered.
+2021-04-27 01:10:41.695 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened!
+2021-04-27 01:10:41.716 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed!
+2021-04-27 01:10:46.935 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened!
+2021-04-27 01:10:46.949 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed!
+2021-04-27 01:11:42.639 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened!
+2021-04-27 01:11:42.656 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed!
+2021-04-27 01:11:42.656 [JavaFX Application Thread] INFO  ir.sharif.aminra.controller.enterPage.SignUpController - user amin signed in.
