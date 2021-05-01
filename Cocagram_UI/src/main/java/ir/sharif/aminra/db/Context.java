@@ -7,6 +7,8 @@ public class Context {
     MessageDB messageDB;
     TweetDB tweetDB;
     UserDB userDB;
+    MessageGroupDB messageGroupDB;
+    ImageDB imageDB;
 
     public static Context getInstance() {
         if(context == null)
@@ -18,6 +20,8 @@ public class Context {
         messageDB = new MessageDB();
         tweetDB = new TweetDB();
         userDB = new UserDB();
+        messageGroupDB = new MessageGroupDB();
+        imageDB = new ImageDB();
     }
 
     public MessageDB getMessageDB() {
@@ -31,4 +35,8 @@ public class Context {
     public UserDB getUserDB() {
         return userDB;
     }
+
+    public MessageGroupDB getMessageGroupDB() { return messageGroupDB; }
+
+    public ImageDB getImageDB() { return imageDB; }
 }

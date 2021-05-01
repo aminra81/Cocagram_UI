@@ -38,6 +38,8 @@ public class User {
     private List<Group> groups;
     private List<ID> savedMessages;
     private List<ID> mutedUsers;
+    private List<ID> messageGroups;
+    private ID avatar;
 
     static private final Logger logger = LogManager.getLogger(User.class);
 
@@ -74,6 +76,8 @@ public class User {
         this.notifications = new ArrayList<>();
         this.savedMessages = new ArrayList<>();
         this.mutedUsers = new ArrayList<>();
+        this.messageGroups = new ArrayList<>();
+        this.avatar = Context.getInstance().getImageDB().DEFAULT_AVATAR_ID;
 
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
@@ -389,6 +393,13 @@ public class User {
     public void removeFromNotifications(String notification) {
         notifications.remove(notification);
 
+        Context.getInstance().getUserDB().saveIntoDB(this);
+    }
+
+    public ID getAvatar() { return avatar; }
+
+    public void setAvatar(ID avatar) {
+        this.avatar = avatar;
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 

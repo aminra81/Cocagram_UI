@@ -40,6 +40,10 @@ public class ID {
         this.idNum = lastID;
     }
 
+    public ID(int idNum) {
+        this.idNum = idNum;
+    }
+
     @Override
     public String toString() {
         return String.valueOf(idNum);

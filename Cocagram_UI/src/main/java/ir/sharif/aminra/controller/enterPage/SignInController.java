@@ -4,8 +4,9 @@ import ir.sharif.aminra.config.Config;
 import ir.sharif.aminra.db.Context;
 import ir.sharif.aminra.events.enterPage.SignInFormEvent;
 import ir.sharif.aminra.models.User;
+import ir.sharif.aminra.view.Page;
 import ir.sharif.aminra.view.ViewManager;
-import ir.sharif.aminra.view.enterPage.EnterPage;
+import ir.sharif.aminra.view.mainPage.MainFXController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,6 +26,10 @@ public class SignInController {
             return;
         }
         logger.info(String.format("user %s signed in.", user.getUsername()));
-        ViewManager.getInstance().setPage(new EnterPage());
+
+        Page mainPage = new Page("mainPage");
+        MainFXController mainFXController = (MainFXController) mainPage.getFxController();
+        mainFXController.setUserID(user.getID());
+        ViewManager.getInstance().setPage(mainPage);
     }
 }

@@ -8,32 +8,34 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="540.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.sharif.aminra.view.enterPage.EnterFXController">
-   <children>
-      <ImageView fitHeight="148.0" fitWidth="247.0" layoutX="240.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../pics/coca.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="219.0" layoutY="332.0" mnemonicParsing="false" onAction="#signInAction" prefHeight="37.0" prefWidth="285.0" text="sign in" textFill="#9505fc">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="219.0" layoutY="272.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="37.0" prefWidth="285.0" text="sign up" textFill="#7e0dda">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Label alignment="CENTER" layoutX="215.0" layoutY="398.0" prefHeight="21.0" prefWidth="292.0" text="Cocagram" textFill="#ee0909">
-         <font>
-            <Font name="System Bold Italic" size="26.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="252.0" layoutY="439.0" prefHeight="26.0" prefWidth="210.0" text="by Aminra" textFill="#e40606">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane prefHeight="540.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ir.sharif.aminra.view.enterPage.EnterFXController">
+   <ImageView fitHeight="148.0" fitWidth="247.0" layoutX="240.0" layoutY="62.0" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@../../../../pics/coca.png"/>
+   </ImageView>
+   <Button layoutX="219.0" layoutY="332.0" mnemonicParsing="false" onAction="#signInAction" prefHeight="37.0"
+           prefWidth="285.0" text="sign in" textFill="#9505fc">
+      <font>
+         <Font size="16.0"/>
+      </font>
+   </Button>
+   <Button layoutX="219.0" layoutY="272.0" mnemonicParsing="false" onAction="#signUpAction" prefHeight="37.0"
+           prefWidth="285.0" text="sign up" textFill="#7e0dda">
+      <font>
+         <Font size="16.0"/>
+      </font>
+   </Button>
+   <Label alignment="CENTER" layoutX="215.0" layoutY="398.0" prefHeight="21.0" prefWidth="292.0" text="Cocagram"
+          textFill="#ee0909">
+      <font>
+         <Font name="System Bold Italic" size="26.0"/>
+      </font>
+   </Label>
+   <Label alignment="CENTER" layoutX="252.0" layoutY="439.0" prefHeight="26.0" prefWidth="210.0" text="by Aminra"
+          textFill="#e40606">
+      <font>
+         <Font size="22.0"/>
+      </font>
+   </Label>
 </AnchorPane>

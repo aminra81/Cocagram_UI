@@ -1,10 +1,8 @@
 package ir.sharif.aminra.view;
 
 import ir.sharif.aminra.config.Config;
-import ir.sharif.aminra.view.enterPage.EnterPage;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.util.Stack;
 
 public class ViewManager {
@@ -24,7 +22,7 @@ public class ViewManager {
     public void start(Stage stage) {
         this.stage = stage;
 
-        curPage = new EnterPage();
+        curPage = new Page("enterPage");
         setPage(curPage);
 
         stage.setTitle(Config.getConfig("main").getProperty("projectName"));
@@ -42,6 +40,8 @@ public class ViewManager {
     }
 
     public void back() {
-        stage.setScene(stack.pop().getScene());
+        stack.pop();
+        stack.peek().getFxController().refresh();
+        stage.setScene(stack.peek().getScene());
     }
 }

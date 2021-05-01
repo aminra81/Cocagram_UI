@@ -13,6 +13,7 @@
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.6" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-core:2.14.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.14.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-swing:linux:16" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:linux:16" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:16" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:linux:16" level="project" />

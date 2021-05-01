@@ -1,13 +1,30 @@
-2021-04-27 01:10:04.703 [main] INFO  ir.sharif.aminra.Main - program started.
-2021-04-27 01:10:36.767 [JavaFX Application Thread] INFO  ir.sharif.aminra.models.ID - file lastID.txt opened.
-2021-04-27 01:10:36.781 [JavaFX Application Thread] INFO  ir.sharif.aminra.models.ID - file lastID.txt closed.
-2021-04-27 01:10:36.783 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened.
-2021-04-27 01:10:36.950 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed.
-2021-04-27 01:10:36.951 [JavaFX Application Thread] INFO  ir.sharif.aminra.controller.enterPage.SignUpController - user amin registered.
-2021-04-27 01:10:41.695 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened!
-2021-04-27 01:10:41.716 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed!
-2021-04-27 01:10:46.935 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened!
-2021-04-27 01:10:46.949 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed!
-2021-04-27 01:11:42.639 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json opened!
-2021-04-27 01:11:42.656 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 1.json closed!
-2021-04-27 01:11:42.656 [JavaFX Application Thread] INFO  ir.sharif.aminra.controller.enterPage.SignUpController - user amin signed in.
+2021-05-01 18:11:05.686 [main] INFO  ir.sharif.aminra.Main - program started.
+2021-05-01 18:11:16.254 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json opened!
+2021-05-01 18:11:16.268 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json closed!
+2021-05-01 18:11:16.268 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened!
+2021-05-01 18:11:16.269 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed!
+2021-05-01 18:11:16.269 [JavaFX Application Thread] INFO  ir.sharif.aminra.controller.enterPage.SignUpController - user aminra signed in.
+2021-05-01 18:11:17.198 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened.
+2021-05-01 18:11:17.203 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed.
+2021-05-01 18:11:17.255 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - read the image from file 14.png
+2021-05-01 18:11:18.148 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened.
+2021-05-01 18:11:18.152 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed.
+2021-05-01 18:11:18.152 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json opened.
+2021-05-01 18:11:18.156 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json closed.
+2021-05-01 18:11:19.859 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened.
+2021-05-01 18:11:19.862 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed.
+2021-05-01 18:11:19.863 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json opened.
+2021-05-01 18:11:19.868 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json closed.
+2021-05-01 18:11:19.869 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json opened.
+2021-05-01 18:11:19.875 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 15.json closed.
+2021-05-01 18:11:19.876 [JavaFX Application Thread] INFO  ir.sharif.aminra.controller.personalPage.notificationsPage.RequestController - aminra rejected farzawm's request.
+2021-05-01 18:11:19.876 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened.
+2021-05-01 18:11:19.879 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed.
+2021-05-01 18:11:19.880 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened.
+2021-05-01 18:11:19.883 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed.
+2021-05-01 18:11:19.926 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - read the image from file 14.png
+2021-05-01 18:11:21.268 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened.
+2021-05-01 18:11:21.275 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed.
+2021-05-01 18:11:22.775 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json opened.
+2021-05-01 18:11:22.778 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 2.json closed.
+2021-05-01 18:11:22.814 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - read the image from file 14.png

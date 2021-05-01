@@ -1,6 +1,5 @@
 package ir.sharif.aminra.models.media;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -8,23 +7,19 @@ import java.util.Objects;
 
 import ir.sharif.aminra.db.Context;
 import ir.sharif.aminra.models.ID;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 
 public class Tweet extends Media {
 
-    static private final Logger logger = LogManager.getLogger(Tweet.class);
-    private static final File dbDirectory = new File("./src/main/resources/DB/Tweets");
-
     private ID upPost;
     private List<ID> likes, comments;
+    int spamAlert;
 
-    public Tweet(String content, ID writer, ID upPost) {
-        super(content, writer);
+    public Tweet(String content, ID writer, ID upPost, ID image) {
+        super(content, writer, image);
         this.upPost = upPost;
         this.likes = new ArrayList<>();
         this.comments = new ArrayList<>();
-
+        spamAlert = 0;
         Context.getInstance().getTweetDB().saveIntoDB(this);
     }
 

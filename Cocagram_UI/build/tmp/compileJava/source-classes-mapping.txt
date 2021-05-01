@@ -1,58 +1,101 @@
-ir/sharif/aminra/models/media/Message.java
- ir.sharif.aminra.models.media.Message
-ir/sharif/aminra/db/MessageDB.java
- ir.sharif.aminra.db.MessageDB
-ir/sharif/aminra/view/enterPage/EnterPage.java
- ir.sharif.aminra.view.enterPage.EnterPage
-ir/sharif/aminra/view/enterPage/SignUpPage.java
- ir.sharif.aminra.view.enterPage.SignUpPage
-ir/sharif/aminra/config/Config.java
- ir.sharif.aminra.config.Config
-ir/sharif/aminra/view/Page.java
- ir.sharif.aminra.view.Page
-ir/sharif/aminra/controller/enterPage/SignUpValidator.java
- ir.sharif.aminra.controller.enterPage.SignUpValidator
-ir/sharif/aminra/db/DBSet.java
- ir.sharif.aminra.db.DBSet
-ir/sharif/aminra/db/UserDB.java
- ir.sharif.aminra.db.UserDB
 ir/sharif/aminra/models/media/Media.java
  ir.sharif.aminra.models.media.Media
-ir/sharif/aminra/models/User.java
- ir.sharif.aminra.models.User
-ir/sharif/aminra/db/Context.java
- ir.sharif.aminra.db.Context
-ir/sharif/aminra/models/media/Tweet.java
- ir.sharif.aminra.models.media.Tweet
+ir/sharif/aminra/db/MessageDB.java
+ ir.sharif.aminra.db.MessageDB
 ir/sharif/aminra/models/ID.java
  ir.sharif.aminra.models.ID
-ir/sharif/aminra/models/Group.java
- ir.sharif.aminra.models.Group
-ir/sharif/aminra/db/TweetDB.java
- ir.sharif.aminra.db.TweetDB
-ir/sharif/aminra/view/ViewManager.java
- ir.sharif.aminra.view.ViewManager
-ir/sharif/aminra/events/enterPage/SignUpFormEvent.java
- ir.sharif.aminra.events.enterPage.SignUpFormEvent
+ir/sharif/aminra/db/DBSet.java
+ ir.sharif.aminra.db.DBSet
 ir/sharif/aminra/view/enterPage/SignUpFXController.java
  ir.sharif.aminra.view.enterPage.SignUpFXController
-ir/sharif/aminra/controller/enterPage/SignUpController.java
- ir.sharif.aminra.controller.enterPage.SignUpController
 ir/sharif/aminra/view/FXController.java
  ir.sharif.aminra.view.FXController
-ir/sharif/aminra/view/enterPage/SignInPage.java
- ir.sharif.aminra.view.enterPage.SignInPage
-ir/sharif/aminra/view/enterPage/EnterFXController.java
- ir.sharif.aminra.view.enterPage.EnterFXController
 ir/sharif/aminra/Main.java
  ir.sharif.aminra.Main
-ir/sharif/aminra/listeners/enterPage/SignUpFormListener.java
- ir.sharif.aminra.listeners.enterPage.SignUpFormListener
-ir/sharif/aminra/view/enterPage/SignInFXController.java
- ir.sharif.aminra.view.enterPage.SignInFXController
+ir/sharif/aminra/events/enterPage/SignUpFormEvent.java
+ ir.sharif.aminra.events.enterPage.SignUpFormEvent
+ir/sharif/aminra/db/TweetDB.java
+ ir.sharif.aminra.db.TweetDB
+ir/sharif/aminra/models/Group.java
+ ir.sharif.aminra.models.Group
+ir/sharif/aminra/config/Config.java
+ ir.sharif.aminra.config.Config
+ir/sharif/aminra/controller/DataValidator.java
+ ir.sharif.aminra.controller.DataValidator
+ir/sharif/aminra/db/MessageGroupDB.java
+ ir.sharif.aminra.db.MessageGroupDB
+ir/sharif/aminra/db/ImageDB.java
+ ir.sharif.aminra.db.ImageDB
+ir/sharif/aminra/models/media/Tweet.java
+ ir.sharif.aminra.models.media.Tweet
+ir/sharif/aminra/models/media/Message.java
+ ir.sharif.aminra.models.media.Message
+ir/sharif/aminra/models/MessageGroup.java
+ ir.sharif.aminra.models.MessageGroup
+ir/sharif/aminra/view/enterPage/EnterFXController.java
+ ir.sharif.aminra.view.enterPage.EnterFXController
+ir/sharif/aminra/view/ViewManager.java
+ ir.sharif.aminra.view.ViewManager
+ir/sharif/aminra/models/User.java
+ ir.sharif.aminra.models.User
+ir/sharif/aminra/controller/enterPage/SignUpController.java
+ ir.sharif.aminra.controller.enterPage.SignUpController
 ir/sharif/aminra/events/enterPage/SignInFormEvent.java
  ir.sharif.aminra.events.enterPage.SignInFormEvent
-ir/sharif/aminra/controller/enterPage/SignInController.java
- ir.sharif.aminra.controller.enterPage.SignInController
 ir/sharif/aminra/listeners/enterPage/SignInFormListener.java
  ir.sharif.aminra.listeners.enterPage.SignInFormListener
+ir/sharif/aminra/view/enterPage/SignInFXController.java
+ ir.sharif.aminra.view.enterPage.SignInFXController
+ir/sharif/aminra/db/Context.java
+ ir.sharif.aminra.db.Context
+ir/sharif/aminra/db/UserDB.java
+ ir.sharif.aminra.db.UserDB
+ir/sharif/aminra/view/Page.java
+ ir.sharif.aminra.view.Page
+ir/sharif/aminra/listeners/enterPage/SignUpFormListener.java
+ ir.sharif.aminra.listeners.enterPage.SignUpFormListener
+ir/sharif/aminra/controller/personalPage/notificationsPage/RequestController.java
+ ir.sharif.aminra.controller.personalPage.notificationsPage.RequestController
+ ir.sharif.aminra.controller.personalPage.notificationsPage.RequestController$1
+ir/sharif/aminra/events/personalPage/notificationsPage/RequestHandlingEvent.java
+ ir.sharif.aminra.events.personalPage.notificationsPage.RequestHandlingEvent
+ir/sharif/aminra/view/personalPage/editPage/EditFXController.java
+ ir.sharif.aminra.view.personalPage.editPage.EditFXController
+ir/sharif/aminra/listeners/personalPage/notificationsPage/RequestHandlingListener.java
+ ir.sharif.aminra.listeners.personalPage.notificationsPage.RequestHandlingListener
+ir/sharif/aminra/view/mainPage/MainFXController.java
+ ir.sharif.aminra.view.mainPage.MainFXController
+ir/sharif/aminra/listeners/personalPage/tweets/NewTweetListener.java
+ ir.sharif.aminra.listeners.personalPage.tweets.NewTweetListener
+ir/sharif/aminra/controller/enterPage/SignInController.java
+ ir.sharif.aminra.controller.enterPage.SignInController
+ir/sharif/aminra/events/personalPage/editPage/EditPageEvent.java
+ ir.sharif.aminra.events.personalPage.editPage.EditPageEvent
+ir/sharif/aminra/view/personalPage/tweets/NewTweetFXController.java
+ ir.sharif.aminra.view.personalPage.tweets.NewTweetFXController
+ir/sharif/aminra/view/personalPage/notificationsPage/RequestFXController.java
+ ir.sharif.aminra.view.personalPage.notificationsPage.RequestFXController
+ir/sharif/aminra/controller/personalPage/tweets/NewTweetController.java
+ ir.sharif.aminra.controller.personalPage.tweets.NewTweetController
+ir/sharif/aminra/events/personalPage/notificationsPage/RequestAnswerType.java
+ ir.sharif.aminra.events.personalPage.notificationsPage.RequestAnswerType
+ir/sharif/aminra/controller/personalPage/editPage/EditPageController.java
+ ir.sharif.aminra.controller.personalPage.editPage.EditPageController
+ir/sharif/aminra/controller/personalPage/MyPageController.java
+ ir.sharif.aminra.controller.personalPage.MyPageController
+ir/sharif/aminra/view/personalPage/MyFXController.java
+ ir.sharif.aminra.view.personalPage.MyFXController
+ir/sharif/aminra/listeners/mainPage/MainPageListener.java
+ ir.sharif.aminra.listeners.mainPage.MainPageListener
+ir/sharif/aminra/listeners/personalPage/editPage/EditPageListener.java
+ ir.sharif.aminra.listeners.personalPage.editPage.EditPageListener
+ir/sharif/aminra/events/personalPage/tweets/NewTweetEvent.java
+ ir.sharif.aminra.events.personalPage.tweets.NewTweetEvent
+ir/sharif/aminra/listeners/personalPage/MyPageListener.java
+ ir.sharif.aminra.listeners.personalPage.MyPageListener
+ir/sharif/aminra/listeners/personalPage/notificationsPage/NotificationsListener.java
+ ir.sharif.aminra.listeners.personalPage.notificationsPage.NotificationsListener
+ir/sharif/aminra/controller/personalPage/notificationsPage/NotificationsPageController.java
+ ir.sharif.aminra.controller.personalPage.notificationsPage.NotificationsPageController
+ir/sharif/aminra/view/personalPage/notificationsPage/NotificationsFXController.java
+ ir.sharif.aminra.view.personalPage.notificationsPage.NotificationsFXController

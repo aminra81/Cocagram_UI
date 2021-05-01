@@ -1,9 +1,9 @@
-package ir.sharif.aminra.controller.enterPage;
+package ir.sharif.aminra.controller;
 
 import ir.sharif.aminra.config.Config;
 import ir.sharif.aminra.db.Context;
 
-public class SignUpValidator {
+public class DataValidator {
 
     private final Config errorsConfig = Config.getConfig("signUpPage");
 

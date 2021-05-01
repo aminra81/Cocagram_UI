@@ -6,11 +6,13 @@ public abstract class Media {
     ID id;
     String content;
     ID writer;
+    ID image;
     LocalDateTime datetime;
-    public Media(String content, ID writer) {
+    public Media(String content, ID writer, ID image) {
         this.id = new ID(true);
         this.content = content;
         this.writer = writer;
+        this.image = image;
         datetime = LocalDateTime.now();
     }
 
@@ -21,6 +23,8 @@ public abstract class Media {
     public ID getId() {
         return id;
     }
+
+    public ID getImage() { return image; }
 
     public LocalDateTime getDateTime() {
         return datetime;

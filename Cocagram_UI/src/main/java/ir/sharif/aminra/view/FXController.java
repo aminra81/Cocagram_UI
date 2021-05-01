@@ -1,7 +1,21 @@
 package ir.sharif.aminra.view;
 
+import ir.sharif.aminra.models.ID;
+import javafx.fxml.FXML;
+
 public abstract class FXController {
-    public void back() {
-        ViewManager.getInstance().back();
+    protected ID userID;
+
+    public ID getUserID() {
+        return userID;
     }
+
+    public void setUserID(ID userID) {
+        this.userID = userID;
+    }
+
+    @FXML
+    public void back() { ViewManager.getInstance().back(); }
+
+    public void refresh() {}
 }
