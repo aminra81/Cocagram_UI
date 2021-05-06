@@ -44,17 +44,18 @@ public class ProfileViewController {
         profileFXController.setFirstnameLabel(userToBeVisited.getFirstname());
         profileFXController.setLastnameLabel(userToBeVisited.getLastname());
         profileFXController.setLastSeenLabel(getLastSeen(user, userToBeVisited));
+        profileFXController.setBioLabel(userToBeVisited.getBio());
         if (userToBeVisited.isPublicData()) {
             if (userToBeVisited.getBirthDate() != null)
                 profileFXController.setBirthDateLabel(userToBeVisited.getBirthDate().toString());
-            profileFXController.setEmailLabel(user.getEmail());
+            profileFXController.setEmailLabel(userToBeVisited.getEmail());
             profileFXController.setPhoneNumberLabel(userToBeVisited.getPhoneNumber());
         } else {
             profileFXController.setBirthDateLabel(Config.
                     getConfig("profilePage").getProperty(String.class, "private"));
             profileFXController.setEmailLabel(Config.
                     getConfig("profilePage").getProperty(String.class, "private"));
-            profileFXController.setEmailLabel(Config.
+            profileFXController.setPhoneNumberLabel(Config.
                     getConfig("profilePage").getProperty(String.class, "private"));
         }
         if (user.getBlockList().contains(userToBeVisited.getID()))
@@ -162,5 +163,11 @@ public class ProfileViewController {
                     "viewSelfProfileError"), true);
         else
             switchPage(user, userToBeVisited);
+    }
+
+    public void switchPageByID(ID userID, ID userToBeVisitedID) {
+        User user = Context.getInstance().getUserDB().getByID(userID);
+        User userToBeVisited = Context.getInstance().getUserDB().getByID(userToBeVisitedID);
+        switchPage(user, userToBeVisited);
     }
 }

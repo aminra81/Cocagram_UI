@@ -33,6 +33,11 @@
                <Font name="System Bold Italic" size="16.0" />
             </font>
          </Label>
+         <Label prefHeight="36.0" prefWidth="211.0" text="bio">
+            <font>
+               <Font name="System Bold Italic" size="16.0" />
+            </font>
+         </Label>
          <Label prefHeight="36.0" prefWidth="211.0" text="birth date">
             <font>
                <Font name="System Bold Italic" size="16.0" />
@@ -63,6 +68,11 @@
             </font>
          </Label>
          <Label fx:id="lastSeenLabel" prefHeight="36.0" prefWidth="234.0">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="bioLabel" prefHeight="36.0" prefWidth="211.0">
             <font>
                <Font size="16.0" />
             </font>

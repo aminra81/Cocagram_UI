@@ -42,6 +42,9 @@ public class ProfileFXController extends FXController implements Initializable {
     private Label lastSeenLabel;
 
     @FXML
+    private Label bioLabel;
+
+    @FXML
     private Label birthDateLabel;
 
     @FXML
@@ -70,6 +73,8 @@ public class ProfileFXController extends FXController implements Initializable {
     public void setLastnameLabel(String lastname) { lastnameLabel.setText(lastname); }
 
     public void setLastSeenLabel(String lastSeen) { lastSeenLabel.setText(lastSeen); }
+
+    public void setBioLabel(String bio) { bioLabel.setText(bio); }
 
     public void setBirthDateLabel(String birthDate) { birthDateLabel.setText(birthDate); }
 
