@@ -83,7 +83,8 @@
             <Font size="15.0" />
         </font>
     </Label>
-   <Button layoutX="460.0" layoutY="468.0" mnemonicParsing="false" onAction="#back" prefHeight="24.0" prefWidth="125.0" text="back" />
-    <Button layoutX="306.0" layoutY="468.0" mnemonicParsing="false" onAction="#edit" prefHeight="24.0" prefWidth="125.0" text="edit" />
+   <Button layoutX="381.0" layoutY="468.0" mnemonicParsing="false" onAction="#back" prefHeight="24.0" prefWidth="125.0" text="back" />
+    <Button layoutX="225.0" layoutY="468.0" mnemonicParsing="false" onAction="#edit" prefHeight="24.0" prefWidth="125.0" text="edit" />
    <Button layoutX="664.0" layoutY="23.0" mnemonicParsing="false" onAction="#changeAvatar" prefHeight="45.0" prefWidth="125.0" text="change avatar" />
+   <Button layoutX="538.0" layoutY="468.0" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="19.0" prefWidth="125.0" text="main page" />
 </AnchorPane>

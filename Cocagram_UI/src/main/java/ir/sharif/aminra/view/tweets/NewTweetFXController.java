@@ -1,11 +1,13 @@
-package ir.sharif.aminra.view.personalPage.tweets;
+package ir.sharif.aminra.view.tweets;
 
-import ir.sharif.aminra.events.personalPage.tweets.NewTweetEvent;
-import ir.sharif.aminra.listeners.personalPage.tweets.NewTweetListener;
+import ir.sharif.aminra.events.tweets.NewTweetEvent;
+import ir.sharif.aminra.listeners.tweets.NewTweetListener;
+import ir.sharif.aminra.models.ID;
 import ir.sharif.aminra.view.FXController;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
@@ -25,8 +27,13 @@ public class NewTweetFXController extends FXController implements Initializable 
     Image tweetImage;
     NewTweetListener newTweetListener;
 
+    ID upPost;
+
     @FXML
     private TextField tweetContent;
+
+    @FXML
+    private Label titleLabel;
 
     @FXML
     public void attach() {
@@ -45,11 +52,16 @@ public class NewTweetFXController extends FXController implements Initializable 
     }
     @FXML
     public void tweet() {
-        newTweetListener.eventOccurred(new NewTweetEvent(this, tweetContent.getText(), tweetImage));
+        newTweetListener.eventOccurred(new NewTweetEvent(this, tweetContent.getText(),
+                tweetImage, upPost));
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         newTweetListener = new NewTweetListener();
     }
+
+    public void setUpPost(ID upPost) { this.upPost = upPost; }
+
+    public void setTitleLabel(String title) { titleLabel.setText(title); }
 }

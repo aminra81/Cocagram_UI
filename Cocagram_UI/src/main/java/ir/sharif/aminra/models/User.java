@@ -40,6 +40,7 @@ public class User {
     private List<ID> mutedUsers;
     private List<ID> messageGroups;
     private ID avatar;
+    private List<ID> reportedSpamTweets;
 
     static private final Logger logger = LogManager.getLogger(User.class);
 
@@ -78,11 +79,10 @@ public class User {
         this.mutedUsers = new ArrayList<>();
         this.messageGroups = new ArrayList<>();
         this.avatar = Context.getInstance().getImageDB().DEFAULT_AVATAR_ID;
+        this.reportedSpamTweets = new ArrayList<>();
 
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
-
-    public ID getId() { return id; }
 
     public void addToLikedTweets(ID tweet) {
         this.likedTweets.add(tweet);
@@ -400,8 +400,17 @@ public class User {
 
     public void setAvatar(ID avatar) {
         this.avatar = avatar;
+
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
+
+    public void addToReportedSpamTweets(ID tweet) {
+        reportedSpamTweets.add(tweet);
+
+        Context.getInstance().getUserDB().saveIntoDB(this);
+    }
+
+    public List<ID> getReportedSpamTweets() { return reportedSpamTweets; }
 
     @Override
     public boolean equals(Object o) {

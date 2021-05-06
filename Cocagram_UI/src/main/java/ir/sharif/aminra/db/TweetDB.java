@@ -4,11 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import ir.sharif.aminra.config.Config;
 import ir.sharif.aminra.models.ID;
+import ir.sharif.aminra.models.User;
 import ir.sharif.aminra.models.media.Tweet;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TweetDB implements DBSet<Tweet> {
 
@@ -47,5 +50,25 @@ public class TweetDB implements DBSet<Tweet> {
         } catch (IOException e) {
             logger.error(String.format("Exception occurred while trying to save tweet %s", tweet.getId()));
         }
+    }
+
+    public List<Tweet> getPublicTweets() {
+        List<Tweet> tweets = new ArrayList<>();
+        try {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            for (File userFile : dbDirectory.listFiles()) {
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(userFile));
+                logger.info(String.format("file %s opened.", userFile.getName()));
+                Tweet currentTweet = gson.fromJson(bufferedReader, Tweet.class);
+                bufferedReader.close();
+                logger.info(String.format("file %s closed.", userFile.getName()));
+                User writer = Context.getInstance().getUserDB().getByID(currentTweet.getWriter());
+                if(!writer.isPrivate())
+                    tweets.add(currentTweet);
+            }
+        } catch (IOException e) {
+            logger.error("an Exception occurred while loading public user's tweets.");
+        }
+        return tweets;
     }
 }

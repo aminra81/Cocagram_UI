@@ -18,6 +18,7 @@ public class NotificationsPageController {
         ViewManager.getInstance().setPage(notificationsPage);
     }
     public void refresh(NotificationsFXController notificationsFXController) {
+        notificationsFXController.clear();
         User user = Context.getInstance().getUserDB().getByID(notificationsFXController.getUserID());
         //add request messages
         for (String requestMessage : user.getRequestNotifications())

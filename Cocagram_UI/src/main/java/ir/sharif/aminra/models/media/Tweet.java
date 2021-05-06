@@ -12,14 +12,14 @@ public class Tweet extends Media {
 
     private ID upPost;
     private List<ID> likes, comments;
-    int spamAlert;
+    int spamReports;
 
     public Tweet(String content, ID writer, ID upPost, ID image) {
         super(content, writer, image);
         this.upPost = upPost;
         this.likes = new ArrayList<>();
         this.comments = new ArrayList<>();
-        spamAlert = 0;
+        spamReports = 0;
         Context.getInstance().getTweetDB().saveIntoDB(this);
     }
 
@@ -65,6 +65,14 @@ public class Tweet extends Media {
             curComments.add(Context.getInstance().getTweetDB().getByID(comment));
         return curComments;
     }
+
+    public void reportSpam() {
+        spamReports++;
+
+        Context.getInstance().getTweetDB().saveIntoDB(this);
+    }
+
+    public int getSpamReports() { return spamReports; }
 
     @Override
     public boolean equals(Object o) {

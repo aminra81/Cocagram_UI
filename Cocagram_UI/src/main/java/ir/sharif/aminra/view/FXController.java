@@ -17,5 +17,10 @@ public abstract class FXController {
     @FXML
     public void back() { ViewManager.getInstance().back(); }
 
+    @FXML
+    public void goToMainPage() { ViewManager.getInstance().goToMainPage(userID); }
+
     public void refresh() {}
+
+    public void clear() {}
 }

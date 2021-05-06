@@ -8,17 +8,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="547.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.sharif.aminra.view.personalPage.notificationsPage.NotificationsFXController">
    <children>
       <TextArea fx:id="requestMessages" layoutX="42.0" layoutY="62.0" prefHeight="412.0" prefWidth="194.0" />
       <TextArea fx:id="systemMessages" layoutX="286.0" layoutY="62.0" prefHeight="412.0" prefWidth="194.0" />
       <ScrollPane layoutX="517.0" layoutY="62.0" prefHeight="412.0" prefWidth="261.0">
          <content>
-            <VBox fx:id="requests" prefHeight="412.0" prefWidth="238.0" />
+            <VBox fx:id="requests" prefHeight="412.0" prefWidth="238.0" spacing="10.0" />
          </content>
       </ScrollPane>
-      <Button layoutX="324.0" layoutY="494.0" mnemonicParsing="false" onAction="#back" prefHeight="24.0" prefWidth="140.0" text="back" />
+      <Button layoutX="427.0" layoutY="494.0" mnemonicParsing="false" onAction="#back" prefHeight="24.0" prefWidth="140.0" text="back" />
       <Label alignment="CENTER" layoutX="42.0" layoutY="20.0" prefHeight="35.0" prefWidth="194.0" text="request messages">
          <font>
             <Font name="System Bold Italic" size="15.0" />
@@ -34,5 +33,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
+      <Button layoutX="243.0" layoutY="494.0" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="24.0" prefWidth="140.0" text="main page" />
    </children>
 </AnchorPane>

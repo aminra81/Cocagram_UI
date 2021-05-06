@@ -25,6 +25,8 @@ public class SignInController {
             signInFormEvent.getSignInFXController().setError(errorsConfig.getProperty("passNotMatch"));
             return;
         }
+        user.setLastSeen(null);
+        user.setActive(true);
         logger.info(String.format("user %s signed in.", user.getUsername()));
 
         Page mainPage = new Page("mainPage");

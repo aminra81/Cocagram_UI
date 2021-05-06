@@ -44,4 +44,11 @@ public class NotificationsFXController extends FXController implements Initializ
     public void refresh() {
         notificationsListener.stringEventOccurred("refresh");
     }
+
+    @Override
+    public void clear() {
+        requests.getChildren().clear();
+        systemMessages.clear();
+        requestMessages.clear();
+    }
 }

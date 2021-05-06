@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="547.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.sharif.aminra.view.settings.PrivacySettingsFXController">
+   <children>
+      <CheckBox fx:id="privacy" layoutX="292.0" layoutY="286.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="247.0" text="I want my account to be private" />
+      <TextField fx:id="passwordField" layoutX="300.0" layoutY="219.0" prefHeight="24.0" prefWidth="231.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="193.0" layoutY="219.0" prefHeight="24.0" prefWidth="91.0" text="password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="lastSeenChoice" layoutX="339.0" layoutY="156.0" prefHeight="24.0" prefWidth="138.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="139.0" layoutY="157.0" prefHeight="22.0" prefWidth="145.0" text="last seen">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="84.0" layoutY="375.0" mnemonicParsing="false" onAction="#deactivate" prefHeight="41.0" prefWidth="145.0" text="deactivate" />
+      <Button layoutX="262.0" layoutY="375.0" mnemonicParsing="false" onAction="#edit" prefHeight="41.0" prefWidth="145.0" text="edit" />
+      <Button layoutX="446.0" layoutY="375.0" mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="145.0" text="back" />
+      <Button layoutX="623.0" layoutY="375.0" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="41.0" prefWidth="145.0" text="main page" />
+   </children>
+</AnchorPane>

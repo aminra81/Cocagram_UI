@@ -30,9 +30,9 @@ public class EditPageController {
         else
             editFXController.setAccountPrivacyField("public");
         if(user.isPublicData())
-            editFXController.setDataPrivacyField("private");
-        else
             editFXController.setDataPrivacyField("public");
+        else
+            editFXController.setDataPrivacyField("private");
 
         editFXController.setUserID(myFXController.getUserID());
     }

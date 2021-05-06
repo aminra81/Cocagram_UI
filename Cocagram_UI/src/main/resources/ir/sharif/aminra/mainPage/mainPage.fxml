@@ -7,27 +7,27 @@
 
 <AnchorPane prefHeight="547.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.sharif.aminra.view.mainPage.MainFXController">
    <children>
-      <Button fx:id="personalPageButton" layoutX="205.0" layoutY="142.0" mnemonicParsing="false" onAction="#personalPage" prefHeight="24.0" prefWidth="403.0" text="personal page">
+      <Button layoutX="205.0" layoutY="142.0" mnemonicParsing="false" onAction="#personalPage" prefHeight="24.0" prefWidth="403.0" text="personal page">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="timelineButton" layoutX="205.0" layoutY="208.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="403.0" text="timeline">
+      <Button layoutX="205.0" layoutY="208.0" mnemonicParsing="false" onAction="#timeline" prefHeight="24.0" prefWidth="403.0" text="timeline">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="explorerButton" layoutX="207.0" layoutY="273.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="403.0" text="explorer">
+      <Button layoutX="207.0" layoutY="273.0" mnemonicParsing="false" onAction="#explorer" prefHeight="24.0" prefWidth="403.0" text="explorer">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="messagingButton" layoutX="206.0" layoutY="341.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="403.0" text="messaging">
+      <Button layoutX="206.0" layoutY="341.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="403.0" text="messaging">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="settingsButton" layoutX="206.0" layoutY="403.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="403.0" text="settings">
+      <Button layoutX="206.0" layoutY="403.0" mnemonicParsing="false" onAction="#settings" prefHeight="24.0" prefWidth="403.0" text="settings">
          <font>
             <Font size="18.0" />
          </font>

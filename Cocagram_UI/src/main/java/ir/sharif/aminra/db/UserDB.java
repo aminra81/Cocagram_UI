@@ -43,10 +43,11 @@ public class UserDB implements DBSet<User>{
             logger.info(String.format("file %s opened.", Data.getName()));
             FileWriter writer = new FileWriter(Data);
             writer.write(gson.toJson(user));
+            writer.flush();
             writer.close();
             logger.info(String.format("file %s closed.", Data.getName()));
         } catch (Exception e) {
-            logger.error(String.format("Exception occurred while trying to save user %s", user.getId()));
+            logger.error(String.format("Exception occurred while trying to save user %s", user.getID()));
         }
     }
 

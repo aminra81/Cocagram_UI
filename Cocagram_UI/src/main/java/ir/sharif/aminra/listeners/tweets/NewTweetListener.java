@@ -1,7 +1,7 @@
-package ir.sharif.aminra.listeners.personalPage.tweets;
+package ir.sharif.aminra.listeners.tweets;
 
-import ir.sharif.aminra.controller.personalPage.tweets.NewTweetController;
-import ir.sharif.aminra.events.personalPage.tweets.NewTweetEvent;
+import ir.sharif.aminra.controller.tweets.NewTweetController;
+import ir.sharif.aminra.events.tweets.NewTweetEvent;
 
 public class NewTweetListener {
     NewTweetController newTweetController;

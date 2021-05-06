@@ -39,6 +39,7 @@ public class SignUpFXController extends FXController implements Initializable {
 
     @FXML
     private ChoiceBox<String> lastSeenChoice;
+
     private final String[] lastSeenChoices = Config.getConfig("signUpPage").
             getPropertyArray(String.class, "allOptions");
 

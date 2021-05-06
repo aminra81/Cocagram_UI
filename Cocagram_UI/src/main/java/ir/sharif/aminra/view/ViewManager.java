@@ -1,6 +1,8 @@
 package ir.sharif.aminra.view;
 
 import ir.sharif.aminra.config.Config;
+import ir.sharif.aminra.models.ID;
+import ir.sharif.aminra.view.mainPage.MainFXController;
 import javafx.stage.Stage;
 
 import java.util.Stack;
@@ -30,10 +32,6 @@ public class ViewManager {
         stage.show();
     }
 
-    public Stage getStage() {
-        return stage;
-    }
-
     public void setPage(Page page) {
         stack.push(page);
         stage.setScene(page.getScene());
@@ -43,5 +41,12 @@ public class ViewManager {
         stack.pop();
         stack.peek().getFxController().refresh();
         stage.setScene(stack.peek().getScene());
+    }
+
+    public void goToMainPage(ID userID) {
+        Page mainPage = new Page("mainPage");
+        MainFXController mainFXController = (MainFXController) mainPage.getFxController();
+        mainFXController.setUserID(userID);
+        ViewManager.getInstance().setPage(mainPage);
     }
 }
