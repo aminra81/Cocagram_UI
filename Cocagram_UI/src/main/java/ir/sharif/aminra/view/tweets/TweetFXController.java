@@ -117,6 +117,18 @@ public class TweetFXController extends FXController implements Initializable {
                 this, userID, tweetID));
     }
 
+    @FXML
+    public void save() {
+        tweetPageListener.eventOccurred(new TweetPageEvent(TweetPageEventType.SAVE,
+                this, userID, tweetID));
+    }
+
+    @FXML
+    public void forward() {
+        tweetPageListener.eventOccurred(new TweetPageEvent(TweetPageEventType.FORWARD,
+                this, userID, tweetID));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tweetPageListener = new TweetPageListener();

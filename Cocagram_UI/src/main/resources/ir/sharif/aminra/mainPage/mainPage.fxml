@@ -22,7 +22,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="206.0" layoutY="341.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="403.0" text="messaging">
+      <Button layoutX="206.0" layoutY="341.0" mnemonicParsing="false" onAction="#messaging" prefHeight="24.0" prefWidth="403.0" text="messaging">
          <font>
             <Font size="18.0" />
          </font>

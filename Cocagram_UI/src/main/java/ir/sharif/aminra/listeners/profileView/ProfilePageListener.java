@@ -1,5 +1,6 @@
 package ir.sharif.aminra.listeners.profileView;
 
+import ir.sharif.aminra.controller.messagingPage.messageSendingPage.MessageSendingController;
 import ir.sharif.aminra.controller.profileView.ProfileViewController;
 import ir.sharif.aminra.events.profileView.ProfilePageEvent;
 
@@ -24,6 +25,9 @@ public class ProfilePageListener {
             case REFRESH:
                 profileViewController.refresh(profilePageEvent.getProfileFXController());
                 break;
+            case MESSAGE:
+                MessageSendingController messageSendingController = new MessageSendingController();
+                messageSendingController.switchPage(profilePageEvent.getUserID(), profilePageEvent.getUserToBeVisitedID());
         }
     }
 }

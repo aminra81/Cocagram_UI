@@ -4,5 +4,6 @@ public enum ProfilePageEventType {
     REFRESH,
     BLOCK,
     MUTE,
-    FOLLOW
+    FOLLOW,
+    MESSAGE
 }

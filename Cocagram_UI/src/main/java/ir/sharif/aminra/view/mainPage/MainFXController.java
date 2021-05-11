@@ -26,6 +26,9 @@ public class MainFXController extends FXController implements Initializable {
     @FXML
     public void explorer() { mainPageListener.stringEventOccurred("explorer"); }
 
+    @FXML
+    public void messaging() { mainPageListener.stringEventOccurred("messaging"); }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         mainPageListener = new MainPageListener(this);

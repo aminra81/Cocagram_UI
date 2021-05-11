@@ -20,9 +20,9 @@
    <Label fx:id="tweetDate" layoutX="178.0" layoutY="511.0" prefHeight="24.0" prefWidth="186.0" textFill="#19e10a" />
    <Label fx:id="likesCounter" alignment="CENTER_RIGHT" layoutX="514.0" layoutY="509.0" prefHeight="24.0" prefWidth="265.0" textFill="#1f0bf8" />
    <Label fx:id="verdictLabel" alignment="CENTER_RIGHT" layoutX="483.0" layoutY="14.0" prefHeight="31.0" prefWidth="294.0" textFill="#da0404" />
-   <Button layoutX="10.0" layoutY="220.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="159.0" text="save" />
+   <Button layoutX="10.0" layoutY="220.0" mnemonicParsing="false" onAction="#save" prefHeight="24.0" prefWidth="159.0" text="save" />
    <Button layoutX="10.0" layoutY="250.0" mnemonicParsing="false" onAction="#retweet" prefHeight="24.0" prefWidth="159.0" text="retweet" />
-   <Button layoutX="10.0" layoutY="281.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="159.0" text="forward" />
+   <Button layoutX="10.0" layoutY="281.0" mnemonicParsing="false" onAction="#forward" prefHeight="24.0" prefWidth="159.0" text="forward" />
    <Button layoutX="10.0" layoutY="312.0" mnemonicParsing="false" onAction="#checkUserProfile" prefHeight="24.0" prefWidth="159.0" text="user profile" />
    <Button fx:id="likeButton" layoutX="10.0" layoutY="345.0" mnemonicParsing="false" onAction="#like" prefHeight="24.0" prefWidth="159.0" text="like" />
    <Button layoutX="10.0" layoutY="378.0" mnemonicParsing="false" onAction="#addComment" prefHeight="24.0" prefWidth="159.0" text="add comment" />

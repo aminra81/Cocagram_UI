@@ -1,1 +1,7 @@
-2021-05-07 01:59:11.906 [main] INFO  ir.sharif.aminra.Main - program started.
+2021-05-12 00:27:18.286 [main] INFO  ir.sharif.aminra.Main - program started.
+2021-05-12 00:27:25.604 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 4.json opened!
+2021-05-12 00:27:25.623 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 4.json closed!
+2021-05-12 00:27:25.623 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 20.json opened!
+2021-05-12 00:27:25.625 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 20.json closed!
+2021-05-12 00:27:39.550 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 4.json opened!
+2021-05-12 00:27:39.569 [JavaFX Application Thread] INFO  ir.sharif.aminra.db.UserDB - file 4.json closed!

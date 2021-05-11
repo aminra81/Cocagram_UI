@@ -45,7 +45,7 @@ public class TweetManager {
                     (Context.getInstance().getUserDB().getByID(tweet.getWriter()).getUsername());
 
 
-        tweetPanelFXController.setTweetID(tweet.getId());
+        tweetPanelFXController.setTweetID(tweet.getID());
         tweetPanelFXController.setUserID(user.getID());
 
         return tweetPanelFXController.getTweetPanel();
@@ -115,7 +115,7 @@ public class TweetManager {
             tweetFXController.getCommentsBox().getChildren().add(TweetManager.getInstance().
                     makeTweetPanel(user, comment, myTweets));
 
-        if(user.getLikedTweets().contains(tweet.getId()))
+        if(user.getLikedTweets().contains(tweet.getID()))
             tweetFXController.setLikeButtonText("dislike");
         else
             tweetFXController.setLikeButtonText("like");
@@ -126,11 +126,11 @@ public class TweetManager {
         User user = Context.getInstance().getUserDB().getByID(userID);
         Tweet tweet = Context.getInstance().getTweetDB().getByID(tweetID);
 
-        if (user.getLikedTweets().contains(tweet.getId())) {
+        if (user.getLikedTweets().contains(tweet.getID())) {
             dislike(user, tweet);
             tweetFXController.setVerdictLabelText(Config.getConfig("tweets").
                     getProperty(String.class, "successfulDislike"), false);
-            logger.info(String.format("user %s disliked tweet %s.", user.getUsername(), tweet.getId()));
+            logger.info(String.format("user %s disliked tweet %s.", user.getUsername(), tweet.getID()));
         }
         else {
             if (tweet.getWriter().equals(user.getID()))
@@ -140,10 +140,10 @@ public class TweetManager {
                 like(user, tweet);
                 tweetFXController.setVerdictLabelText(Config.getConfig("tweets").
                         getProperty(String.class, "successfulLike"), false);
-                logger.info(String.format("user %s liked tweet %s.", user.getUsername(), tweet.getId()));
+                logger.info(String.format("user %s liked tweet %s.", user.getUsername(), tweet.getID()));
             }
         }
-        if(user.getLikedTweets().contains(tweet.getId()))
+        if(user.getLikedTweets().contains(tweet.getID()))
             tweetFXController.setLikeButtonText("dislike");
         else
             tweetFXController.setLikeButtonText("like");
@@ -152,12 +152,12 @@ public class TweetManager {
 
     private void like(User user, Tweet tweet) {
         tweet.addLike(user.getID());
-        user.addToLikedTweets(tweet.getId());
+        user.addToLikedTweets(tweet.getID());
     }
 
     private void dislike(User user, Tweet tweet) {
         tweet.removeLike(user.getID());
-        user.removeFromLikedTweets(tweet.getId());
+        user.removeFromLikedTweets(tweet.getID());
     }
 
     public void retweet(ID userID, ID tweetID, TweetFXController tweetFXController) {
@@ -169,17 +169,17 @@ public class TweetManager {
                     getProperty(String.class, "retweetCommentError"), true);
             logger.info(String.format("user %s wants to retweet a comment", user.getUsername()));
         }
-        else if (user.getTweets().contains(tweet.getId())) {
+        else if (user.getTweets().contains(tweet.getID())) {
             tweetFXController.setVerdictLabelText(Config.getConfig("tweets").
                     getProperty(String.class, "alreadyRetweetedError"), true);
             logger.info(String.format("user %s wants to retweet a tweet which has already retweeted.",
                     user.getUsername()));
         }
         else {
-            user.addToTweets(tweet.getId());
+            user.addToTweets(tweet.getID());
             tweetFXController.setVerdictLabelText(Config.getConfig("tweets").
                     getProperty(String.class, "successfulRetweet"), false);
-            logger.info(String.format("user %s retweeted tweet %s.", user.getUsername(), tweet.getId()));
+            logger.info(String.format("user %s retweeted tweet %s.", user.getUsername(), tweet.getID()));
         }
     }
 
@@ -198,7 +198,7 @@ public class TweetManager {
     }
 
     private void reportSpam(User user, Tweet tweet) {
-        user.addToReportedSpamTweets(tweet.getId());
+        user.addToReportedSpamTweets(tweet.getID());
         tweet.reportSpam();
     }
 }

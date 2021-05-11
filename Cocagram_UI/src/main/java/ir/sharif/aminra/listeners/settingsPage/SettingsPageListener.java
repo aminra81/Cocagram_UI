@@ -15,6 +15,7 @@ public class SettingsPageListener {
         SettingsController settingsController = new SettingsController();
         switch (event) {
             case "deleteAccount":
+                settingsController.deleteAccount(settingsFXController.getUserID());
                 break;
             case "logout":
                 settingsController.logout(settingsFXController.getUserID());

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane prefHeight="547.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.sharif.aminra.view.messagingPage.MessageViewerFXController">
+   <children>
+      <Rectangle fx:id="photoBox" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="232.0" layoutX="192.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="431.0" />
+      <TextArea fx:id="messageContentField" layoutX="114.0" layoutY="287.0" prefHeight="137.0" prefWidth="586.0" />
+      <Button layoutX="165.0" layoutY="452.0" mnemonicParsing="false" onAction="#back" prefHeight="24.0" prefWidth="107.0" text="back" />
+      <Button layoutX="548.0" layoutY="452.0" mnemonicParsing="false" onAction="#goToMainPage" prefHeight="24.0" prefWidth="107.0" text="main page" />
+      <Button layoutX="297.0" layoutY="452.0" mnemonicParsing="false" onAction="#forward" prefHeight="24.0" prefWidth="107.0" text="forward" />
+      <Button fx:id="editButton" layoutX="297.0" layoutY="490.0" mnemonicParsing="false" onAction="#edit" prefHeight="24.0" prefWidth="107.0" text="edit" />
+      <Button fx:id="deleteButton" layoutX="425.0" layoutY="490.0" mnemonicParsing="false" onAction="#delete" prefHeight="24.0" prefWidth="107.0" text="delete" />
+      <Label fx:id="messageDateLabel" layoutX="114.0" layoutY="424.0" prefHeight="28.0" prefWidth="174.0" textFill="#56cd1e" />
+      <Label fx:id="senderLabel" layoutX="114.0" layoutY="251.0" prefHeight="38.0" prefWidth="472.0" textFill="#ee0b0b" />
+      <Button layoutX="425.0" layoutY="452.0" mnemonicParsing="false" onAction="#checkUserProfile" prefHeight="24.0" prefWidth="107.0" text="user profile" />
+      <Label fx:id="errorLabel" alignment="CENTER_RIGHT" layoutX="461.0" layoutY="424.0" prefHeight="28.0" prefWidth="238.0" textFill="#eb0505" />
+   </children>
+</AnchorPane>

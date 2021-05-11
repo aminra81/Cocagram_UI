@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="groupSelectingPanel" prefHeight="200.0" prefWidth="313.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.sharif.aminra.view.messagingPage.messageSendingPage.GroupSelectingPanelFXController">
+   <effect>
+      <InnerShadow />
+   </effect>
+   <children>
+      <Label fx:id="groupNameLabel" alignment="CENTER" layoutX="22.0" layoutY="29.0" prefHeight="46.0" prefWidth="266.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ToggleButton layoutX="98.0" layoutY="114.0" mnemonicParsing="false" onAction="#toggle" prefHeight="24.0" prefWidth="118.0" text="select" />
+   </children>
+</AnchorPane>

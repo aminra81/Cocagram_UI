@@ -39,7 +39,7 @@ public class TweetDB implements DBSet<Tweet> {
     public void saveIntoDB(Tweet tweet) {
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            File Data = new File(dbDirectory, tweet.getId() + ".json");
+            File Data = new File(dbDirectory, tweet.getID() + ".json");
             if (!Data.exists())
                 Data.createNewFile();
             logger.info(String.format("file %s opened.", Data.getName()));
@@ -48,7 +48,7 @@ public class TweetDB implements DBSet<Tweet> {
             writer.close();
             logger.info(String.format("file %s closed.", Data.getName()));
         } catch (IOException e) {
-            logger.error(String.format("Exception occurred while trying to save tweet %s", tweet.getId()));
+            logger.error(String.format("Exception occurred while trying to save tweet %s", tweet.getID()));
         }
     }
 
@@ -70,5 +70,36 @@ public class TweetDB implements DBSet<Tweet> {
             logger.error("an Exception occurred while loading public user's tweets.");
         }
         return tweets;
+    }
+
+    public void deleteTweets(ID userID) {
+        try {
+            List<String> toBeDeletedTweets = new ArrayList<>();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            for (File file : dbDirectory.listFiles()) {
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+                logger.info(String.format("file %s opened.", file.getName()));
+                Tweet currentTweet = gson.fromJson(bufferedReader, Tweet.class);
+                bufferedReader.close();
+                logger.info(String.format("file %s closed.", file.getName()));
+                if (isDependentTweet(currentTweet, userID))
+                    toBeDeletedTweets.add(currentTweet.getID() + ".json");
+            }
+            for (File file : dbDirectory.listFiles())
+                if (toBeDeletedTweets.contains(file.getName())) {
+                    logger.info(String.format("file %s deleted.", file.getName()));
+                    file.delete();
+                }
+        } catch (IOException e) {
+            logger.error(String.format("an exception occurred while deleting tweets of user %s", userID));
+        }
+    }
+
+    private boolean isDependentTweet(Tweet tweet, ID userID) {
+        if (tweet.getWriter().equals(userID))
+            return true;
+        if (tweet.getUpPost() == null)
+            return false;
+        return isDependentTweet(getByID(tweet.getUpPost()), userID);
     }
 }

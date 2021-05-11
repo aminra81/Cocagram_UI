@@ -79,7 +79,7 @@ public class Tweet extends Media {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Tweet tweet = (Tweet) o;
-        return tweet.getId().equals(getId());
+        return tweet.getID().equals(getID());
     }
 
     @Override

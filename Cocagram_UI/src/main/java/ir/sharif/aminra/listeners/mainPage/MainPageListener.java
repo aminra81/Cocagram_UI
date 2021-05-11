@@ -1,6 +1,7 @@
 package ir.sharif.aminra.listeners.mainPage;
 
 import ir.sharif.aminra.controller.explorerPage.ExplorerController;
+import ir.sharif.aminra.controller.messagingPage.MessagingController;
 import ir.sharif.aminra.controller.personalPage.MyPageController;
 import ir.sharif.aminra.controller.settingsPage.SettingsController;
 import ir.sharif.aminra.controller.timelinePage.TimelineController;
@@ -29,6 +30,9 @@ public class MainPageListener {
                 ExplorerController explorerController = new ExplorerController();
                 explorerController.switchPage(mainFXController);
                 break;
+            case "messaging":
+                MessagingController messagingController = new MessagingController();
+                messagingController.switchPage(mainFXController);
             default:
                 break;
         }

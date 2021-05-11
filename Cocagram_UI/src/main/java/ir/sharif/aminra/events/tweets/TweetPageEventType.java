@@ -6,5 +6,7 @@ public enum TweetPageEventType {
     ADD_COMMENT,
     REPORT_SPAM,
     CHECK_USER_PROFiLE,
-    REFRESH
+    REFRESH,
+    SAVE,
+    FORWARD
 }

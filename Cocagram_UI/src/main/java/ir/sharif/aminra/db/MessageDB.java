@@ -36,7 +36,7 @@ public class MessageDB implements DBSet<Message> {
     public void saveIntoDB(Message message) {
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            File Data = new File(dbDirectory, message.getId() + ".json");
+            File Data = new File(dbDirectory, message.getID() + ".json");
             if (!Data.exists())
                 Data.createNewFile();
             logger.info(String.format("file %s opened.", Data.getName()));
@@ -45,7 +45,26 @@ public class MessageDB implements DBSet<Message> {
             writer.close();
             logger.info(String.format("file %s closed.", Data.getName()));
         } catch (Exception e) {
-            logger.error(String.format("Exception occurred while trying to save message %s", message.getId()));
+            logger.error(String.format("Exception occurred while trying to save message %s", message.getID()));
+        }
+    }
+
+    public void deleteMessages(ID userID) {
+        try {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            for (File file : dbDirectory.listFiles()) {
+                BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+                logger.info(String.format("file %s opened.", file.getName()));
+                Message currentMessage = gson.fromJson(bufferedReader, Message.class);
+                bufferedReader.close();
+                logger.info(String.format("file %s closed.", file.getName()));
+                if (currentMessage.getWriter().equals(userID)) {
+                    logger.info(String.format("file %s deleted.", file.getName()));
+                    file.delete();
+                }
+            }
+        } catch (IOException e) {
+            logger.error(String.format("an exception occurred while deleting messages of user %s", userID));
         }
     }
 }

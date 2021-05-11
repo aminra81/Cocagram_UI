@@ -106,6 +106,12 @@ public class ProfileFXController extends FXController implements Initializable {
                 this));
     }
 
+    @FXML
+    public void messageHandling() {
+        profilePageListener.eventOccurred(new ProfilePageEvent(ProfilePageEventType.MESSAGE, userID, userToVeVisited,
+                this));
+    }
+
     @Override
     public void refresh() {
         profilePageListener.eventOccurred(new ProfilePageEvent(ProfilePageEventType.REFRESH, userID, userToVeVisited,

@@ -6,6 +6,7 @@ import ir.sharif.aminra.models.ID;
 import ir.sharif.aminra.models.User;
 import ir.sharif.aminra.view.Page;
 import ir.sharif.aminra.view.ViewManager;
+import ir.sharif.aminra.view.messagingPage.MessageViewerFXController;
 import ir.sharif.aminra.view.profileView.ProfileFXController;
 import ir.sharif.aminra.view.tweets.TweetFXController;
 import javafx.scene.paint.ImagePattern;
@@ -25,6 +26,8 @@ public class ProfileViewController {
             ViewManager.getInstance().setPage(deactivatedUserPage);
             return;
         }
+        if (user.equals(userToBeVisited))
+            return;
         Page profilePage = new Page("profilePage");
         ProfileFXController profileFXController = (ProfileFXController) profilePage.getFxController();
         profileFXController.setUserID(user.getID());
@@ -161,6 +164,17 @@ public class ProfileViewController {
         if (user.equals(userToBeVisited))
             tweetFXController.setVerdictLabelText(Config.getConfig("tweets").getProperty(String.class,
                     "viewSelfProfileError"), true);
+        else
+            switchPage(user, userToBeVisited);
+    }
+
+    public void switchPageByMessage(ID userID, ID messageID, MessageViewerFXController messageViewerFXController) {
+        User user = Context.getInstance().getUserDB().getByID(userID);
+        User userToBeVisited = Context.getInstance().getUserDB().
+                getByID(Context.getInstance().getMessageDB().getByID(messageID).getWriter());
+        if (user.equals(userToBeVisited))
+            messageViewerFXController.setErrorLabel(Config.getConfig("messageViewerPage").getProperty(String.class,
+                    "viewSelfProfileError"));
         else
             switchPage(user, userToBeVisited);
     }

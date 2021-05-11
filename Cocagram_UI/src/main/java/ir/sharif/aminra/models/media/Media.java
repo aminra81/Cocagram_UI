@@ -1,4 +1,5 @@
 package ir.sharif.aminra.models.media;
+import ir.sharif.aminra.db.Context;
 import ir.sharif.aminra.models.ID;
 import java.time.LocalDateTime;
 
@@ -20,7 +21,7 @@ public abstract class Media {
 
     public String getContent() { return content; }
 
-    public ID getId() {
+    public ID getID() {
         return id;
     }
 

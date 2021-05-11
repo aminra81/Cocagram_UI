@@ -9,7 +9,6 @@ import ir.sharif.aminra.view.mainPage.MainFXController;
 import ir.sharif.aminra.view.settings.SettingsFXController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.time.LocalDateTime;
 
 public class SettingsController {
@@ -27,6 +26,14 @@ public class SettingsController {
         User user = Context.getInstance().getUserDB().getByID(userID);
         logger.info(String.format("user %s logged out from the app.", user.getUsername()));
         user.setLastSeen(LocalDateTime.now());
+        ViewManager.getInstance().setPage(new Page("enterPage"));
+    }
+
+    public void deleteAccount(ID userID) {
+        Context.getInstance().getTweetDB().deleteTweets(userID);
+        Context.getInstance().getMessageDB().deleteMessages(userID);
+        Context.getInstance().getChatDB().deleteChats(userID);
+        Context.getInstance().getUserDB().deleteUser(userID);
         ViewManager.getInstance().setPage(new Page("enterPage"));
     }
 }

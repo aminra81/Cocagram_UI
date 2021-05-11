@@ -94,7 +94,7 @@
          </Label>
       </children>
    </VBox>
-   <Button layoutX="45.0" layoutY="448.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="98.0" text="message" />
+   <Button layoutX="45.0" layoutY="448.0" mnemonicParsing="false" onAction="#messageHandling" prefHeight="24.0" prefWidth="98.0" text="message" />
    <Button fx:id="muteButton" layoutX="169.0" layoutY="448.0" mnemonicParsing="false" onAction="#muteHandling" prefHeight="24.0" prefWidth="98.0" text="mute" />
    <Button fx:id="blockButton" layoutX="298.0" layoutY="448.0" mnemonicParsing="false" onAction="#blockHandling" prefHeight="24.0" prefWidth="98.0" text="block" />
    <Button fx:id="followButton" layoutX="426.0" layoutY="448.0" mnemonicParsing="false" onAction="#followHandling" prefHeight="24.0" prefWidth="98.0" text="follow" />

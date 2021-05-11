@@ -30,10 +30,10 @@ public class NewTweetController {
         String content = newTweetEvent.getContent();
         Tweet curTweet = new Tweet(content, userID, newTweetEvent.getUpPost(), imageID);
         User user = Context.getInstance().getUserDB().getByID(userID);
-        user.addToTweets(curTweet.getId());
+        user.addToTweets(curTweet.getID());
         if(newTweetEvent.getUpPost() != null) {
             Tweet upTweet = Context.getInstance().getTweetDB().getByID(newTweetEvent.getUpPost());
-            upTweet.addComment(curTweet.getId());
+            upTweet.addComment(curTweet.getID());
         }
         ViewManager.getInstance().back();
     }

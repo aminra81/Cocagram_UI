@@ -1,5 +1,6 @@
 package ir.sharif.aminra.listeners.tweets;
 
+import ir.sharif.aminra.controller.messagingPage.messageSendingPage.ChatSelectingController;
 import ir.sharif.aminra.controller.profileView.ProfileViewController;
 import ir.sharif.aminra.controller.tweets.NewTweetController;
 import ir.sharif.aminra.controller.tweets.TweetManager;
@@ -7,6 +8,7 @@ import ir.sharif.aminra.events.tweets.TweetPageEvent;
 
 public class TweetPageListener {
     public void eventOccurred(TweetPageEvent tweetPageEvent) {
+        ChatSelectingController chatSelectingController = new ChatSelectingController();
         switch (tweetPageEvent.getTweetPageEventType()) {
             case LIKE:
                 TweetManager.getInstance().like(tweetPageEvent.getUserID(), tweetPageEvent.getTweetID(),
@@ -31,6 +33,13 @@ public class TweetPageListener {
                 ProfileViewController profileViewController = new ProfileViewController();
                 profileViewController.switchPageByTweet(tweetPageEvent.getUserID(), tweetPageEvent.getTweetID(),
                         tweetPageEvent.getTweetFXController());
+                break;
+            case SAVE:
+                chatSelectingController.saveTweet(tweetPageEvent.getUserID(), tweetPageEvent.getTweetID(),
+                        tweetPageEvent.getTweetFXController());
+                break;
+            case FORWARD:
+                chatSelectingController.forwardTweet(tweetPageEvent.getUserID(), tweetPageEvent.getTweetID());
                 break;
         }
     }

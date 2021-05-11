@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import ir.sharif.aminra.config.Config;
 import ir.sharif.aminra.db.Context;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 
 public class User {
     private ID id;
@@ -30,19 +29,15 @@ public class User {
     private List<ID> tweets;
     private List<String> requestNotifications;
     private List<ID> likedTweets;
-    private List<ID> messages;
-    private List<ID> unreadMessages;
     private List<ID> requests;
     private List<String> notifications;
     private boolean isPrivate;
     private List<Group> groups;
-    private List<ID> savedMessages;
     private List<ID> mutedUsers;
-    private List<ID> messageGroups;
     private ID avatar;
     private List<ID> reportedSpamTweets;
 
-    static private final Logger logger = LogManager.getLogger(User.class);
+    private List<ChatState> chatStates;
 
     public User(String username, String firstname, String lastname, String bio, LocalDate birthDate, String email, String phoneNumber, String password, boolean publicData, String lastSeenType) {
         //get from user.
@@ -71,15 +66,16 @@ public class User {
         this.likedTweets = new ArrayList<>();
         this.requestNotifications = new ArrayList<>();
 
-        this.messages = new ArrayList<>();
-        this.unreadMessages = new ArrayList<>();
         this.requests = new ArrayList<>();
         this.notifications = new ArrayList<>();
-        this.savedMessages = new ArrayList<>();
         this.mutedUsers = new ArrayList<>();
-        this.messageGroups = new ArrayList<>();
         this.avatar = Context.getInstance().getImageDB().DEFAULT_AVATAR_ID;
         this.reportedSpamTweets = new ArrayList<>();
+        this.chatStates = new ArrayList<>();
+
+        Chat savedMessagesChat = new Chat(Config.getConfig("messagingPage").getProperty("savedMessages"), false);
+        savedMessagesChat.addUser(this.getID());
+        this.addChatState(new ChatState(savedMessagesChat.getID()));
 
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
@@ -108,23 +104,13 @@ public class User {
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 
-    public void addToMessages(ID message) {
-        this.messages.add(message);
-
-        Context.getInstance().getUserDB().saveIntoDB(this);
-    }
-
-    public void addToUnreadMessages(ID message) {
-        this.unreadMessages.add(message);
-
-        Context.getInstance().getUserDB().saveIntoDB(this);
-    }
-
     public ID getID() {
         return this.id;
     }
 
-    public String getPassword() { return password; }
+    public String getPassword() {
+        return password;
+    }
 
     public String getUsername() {
         return username;
@@ -210,11 +196,17 @@ public class User {
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 
-    public List<String> getNotifications() { return notifications; }
+    public List<String> getNotifications() {
+        return notifications;
+    }
 
-    public List<String> getRequestNotifications() { return requestNotifications; }
+    public List<String> getRequestNotifications() {
+        return requestNotifications;
+    }
 
-    public List<ID> getRequests() { return requests; }
+    public List<ID> getRequests() {
+        return requests;
+    }
 
     public void addToFollowings(ID user) {
         followings.add(user);
@@ -254,7 +246,7 @@ public class User {
 
     public void addToRequestNotifications(String content) {
         requestNotifications.add(content);
-        if(requestNotifications.size() > 10)
+        if (requestNotifications.size() > 10)
             requestNotifications.remove(0);
 
         Context.getInstance().getUserDB().saveIntoDB(this);
@@ -262,7 +254,7 @@ public class User {
 
     public void addToNotifications(String content) {
         notifications.add(content);
-        if(notifications.size() > 10)
+        if (notifications.size() > 10)
             notifications.remove(0);
 
         Context.getInstance().getUserDB().saveIntoDB(this);
@@ -280,7 +272,9 @@ public class User {
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 
-    public List<Group> getGroups() { return groups; }
+    public List<Group> getGroups() {
+        return groups;
+    }
 
     public List<ID> getFollowings() {
         return followings;
@@ -306,9 +300,13 @@ public class User {
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 
-    public List<ID> getLikedTweets() { return likedTweets; }
+    public List<ID> getLikedTweets() {
+        return likedTweets;
+    }
 
-    public List<ID> getMutedUsers() { return mutedUsers; }
+    public List<ID> getMutedUsers() {
+        return mutedUsers;
+    }
 
     public void addToMutedUsers(ID user) {
         mutedUsers.add(user);
@@ -328,40 +326,12 @@ public class User {
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 
-    public LocalDateTime getLastSeen() { return lastSeen; }
-
-    public void addToSavedMessages(ID message) {
-        savedMessages.add(message);
-
-        Context.getInstance().getUserDB().saveIntoDB(this);
+    public LocalDateTime getLastSeen() {
+        return lastSeen;
     }
 
     public void setActive(boolean isActive) {
         this.isActive = isActive;
-
-        Context.getInstance().getUserDB().saveIntoDB(this);
-    }
-
-    public List<ID> getSavedMessages() { return savedMessages; }
-
-    public List<ID> getUnreadMessages() { return unreadMessages; }
-
-    public List<ID> getMessages() { return messages; }
-
-    public void removeFromMessages(ID message) {
-        messages.remove(message);
-
-        Context.getInstance().getUserDB().saveIntoDB(this);
-    }
-
-    public void removeFromUnreadMessages(ID message) {
-        unreadMessages.remove(message);
-
-        Context.getInstance().getUserDB().saveIntoDB(this);
-    }
-
-    public void removeFromSavedMessages(ID message) {
-        savedMessages.remove(message);
 
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
@@ -396,7 +366,9 @@ public class User {
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 
-    public ID getAvatar() { return avatar; }
+    public ID getAvatar() {
+        return avatar;
+    }
 
     public void setAvatar(ID avatar) {
         this.avatar = avatar;
@@ -410,7 +382,32 @@ public class User {
         Context.getInstance().getUserDB().saveIntoDB(this);
     }
 
-    public List<ID> getReportedSpamTweets() { return reportedSpamTweets; }
+    public List<ID> getReportedSpamTweets() {
+        return reportedSpamTweets;
+    }
+
+    public void addChatState(ChatState chatState) {
+        chatStates.add(chatState);
+        Context.getInstance().getUserDB().saveIntoDB(this);
+    }
+
+    public List<ChatState> getChatStates() {
+        return chatStates;
+    }
+
+    public void updateChatLastCheck(ID chatID) {
+        for (ChatState chatState : chatStates)
+            if (chatState.getChat().equals(chatID))
+                chatState.setLastCheck(LocalDateTime.now());
+
+        Context.getInstance().getUserDB().saveIntoDB(this);
+    }
+
+    public void removeFromChatStates(ChatState chatState) {
+        chatStates.remove(chatState);
+
+        Context.getInstance().getUserDB().saveIntoDB(this);
+    }
 
     @Override
     public boolean equals(Object o) {
