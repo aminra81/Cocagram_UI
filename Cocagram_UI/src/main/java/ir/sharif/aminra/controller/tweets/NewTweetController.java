@@ -9,8 +9,13 @@ import ir.sharif.aminra.models.media.Tweet;
 import ir.sharif.aminra.view.Page;
 import ir.sharif.aminra.view.ViewManager;
 import ir.sharif.aminra.view.tweets.NewTweetFXController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class NewTweetController {
+
+    static private final Logger logger = LogManager.getLogger(NewTweetController.class);
+
     public void switchPage(ID userID, ID upPost) {
         Page newTweetPage = new Page("newTweetPage");
         ViewManager.getInstance().setPage(newTweetPage);
@@ -35,6 +40,7 @@ public class NewTweetController {
             Tweet upTweet = Context.getInstance().getTweetDB().getByID(newTweetEvent.getUpPost());
             upTweet.addComment(curTweet.getID());
         }
+        logger.info(String.format("user %s added tweet %s", user.getUsername(), curTweet.getID()));
         ViewManager.getInstance().back();
     }
 }

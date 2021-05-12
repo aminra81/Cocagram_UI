@@ -29,8 +29,10 @@ public class SignUpController {
         if (error.equals(""))
             error = signUpValidator.validatePhoneNumber(signUpFormEvent.getEmail());
 
-        if (!error.equals(""))
+        if (!error.equals("")) {
             signUpFormEvent.getSignUpFXController().setError(error);
+            logger.info(error);
+        }
         else {
             new User(signUpFormEvent.getUsername(), signUpFormEvent.getFirstname(), signUpFormEvent.getLastname(),
                     signUpFormEvent.getBio(), signUpFormEvent.getBirthDate(), signUpFormEvent.getEmail(),

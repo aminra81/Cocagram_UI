@@ -11,9 +11,14 @@ import ir.sharif.aminra.view.Page;
 import ir.sharif.aminra.view.ViewManager;
 import ir.sharif.aminra.view.messagingPage.MessageViewerFXController;
 import javafx.scene.paint.ImagePattern;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.format.DateTimeFormatter;
 
 public class MessageViewerController {
+    static private final Logger logger = LogManager.getLogger(MessageViewerController.class);
+
     public void switchPage(ID userID, ID messageID) {
         Page messageViewerPage = new Page("messageViewerPage");
         MessageViewerFXController messageViewerFXController = (MessageViewerFXController) messageViewerPage.getFxController();
@@ -55,10 +60,13 @@ public class MessageViewerController {
         Message message = Context.getInstance().getMessageDB().getByID(messageID);
         if (message.getMainMedia() == null) {
             message.setContent(messageNewContent);
+            logger.info(String.format("message %s is edited.", message.getID()));
             ViewManager.getInstance().back();
-        } else
+        } else {
             messageViewerFXController.setErrorLabel(
                     Config.getConfig("messageViewerPage").getProperty("editForwardedMessageError"));
+            logger.info(String.format("user wants to edit message %s which is forwarded", message.getID()));
+        }
     }
 
     public void deleteMessage(ID messageID) {

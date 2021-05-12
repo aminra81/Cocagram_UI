@@ -15,11 +15,15 @@ import ir.sharif.aminra.view.messagingPage.messageSendingPage.ChatSelectingFXCon
 import ir.sharif.aminra.view.messagingPage.messageSendingPage.ChatSelectingPanelFXController;
 import ir.sharif.aminra.view.messagingPage.messageSendingPage.GroupSelectingPanelFXController;
 import ir.sharif.aminra.view.tweets.TweetFXController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class ChatSelectingController {
+    static private final Logger logger = LogManager.getLogger(ChatSelectingController.class);
+
     public void switchPage(ID userID, ID messageID) {
         Page chatSelectingPage = new Page("chatSelectingPage");
         ChatSelectingFXController chatSelectingFXController = (ChatSelectingFXController) chatSelectingPage.getFxController();
@@ -95,6 +99,7 @@ public class ChatSelectingController {
             Chat chat = Context.getInstance().getChatDB().getByID(chatID);
             chat.addMessage(message.getID());
         }
+        logger.info(String.format("user %s sent message %s to some chats.", writer.getUsername(), message.getID()));
         ViewManager.getInstance().back();
     }
 
@@ -106,6 +111,7 @@ public class ChatSelectingController {
         }
         //creating chat
         Chat chat = new Chat("", false);
+        logger.info(String.format("user %s created chat %s", writer.getUsername(), chat.getID()));
         chat.addUser(writer.getID());
         chat.addUser(receiver.getID());
         writer.addChatState(new ChatState(chat.getID()));
@@ -121,6 +127,7 @@ public class ChatSelectingController {
         Message message = new Message(tweet.getContent(), user.getID(), tweetID, tweet.getImage(), true);
         Chat savedMessages = getSavedMessages(user);
         savedMessages.addMessage(message.getID());
+        logger.info(String.format("user %s saved tweet %s", user.getUsername(), tweet.getID()));
     }
 
     public Chat getSavedMessages(User user) {

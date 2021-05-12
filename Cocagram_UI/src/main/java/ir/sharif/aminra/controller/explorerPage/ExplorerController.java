@@ -8,9 +8,11 @@ import ir.sharif.aminra.view.Page;
 import ir.sharif.aminra.view.ViewManager;
 import ir.sharif.aminra.view.explorerPage.ExplorerFXController;
 import ir.sharif.aminra.view.mainPage.MainFXController;
+
 import java.util.List;
 
 public class ExplorerController {
+
     public void switchPage(MainFXController mainFXController) {
         Page explorerPage = new Page("explorerPage");
         ExplorerFXController explorerFXController = (ExplorerFXController) explorerPage.getFxController();

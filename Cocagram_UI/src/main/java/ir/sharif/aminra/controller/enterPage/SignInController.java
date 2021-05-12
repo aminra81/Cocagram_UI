@@ -18,10 +18,12 @@ public class SignInController {
         Config errorsConfig = Config.getConfig("signInPage");
         User user = Context.getInstance().getUserDB().getUser(signInFormEvent.getUsername());
         if(user == null) {
+            logger.info(errorsConfig.getProperty("noUserError"));
             signInFormEvent.getSignInFXController().setError(errorsConfig.getProperty("noUserError"));
             return;
         }
         if(!user.getPassword().equals(signInFormEvent.getPassword())) {
+            logger.info(errorsConfig.getProperty("passNotMatch"));
             signInFormEvent.getSignInFXController().setError(errorsConfig.getProperty("passNotMatch"));
             return;
         }

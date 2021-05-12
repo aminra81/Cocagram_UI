@@ -45,6 +45,7 @@ public class NewTweetFXController extends FXController implements Initializable 
         try {
             BufferedImage bufferedImage = ImageIO.read(file);
             tweetImage = SwingFXUtils.toFXImage(bufferedImage, null);
+            logger.info("loaded image successfully");
         } catch (IOException e) {
             e.printStackTrace();
             logger.warn("an error occurred while trying to load image.");

@@ -9,8 +9,13 @@ import ir.sharif.aminra.view.Page;
 import ir.sharif.aminra.view.ViewManager;
 import ir.sharif.aminra.view.personalPage.editPage.EditFXController;
 import ir.sharif.aminra.view.personalPage.MyFXController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class EditPageController {
+
+    static private final Logger logger = LogManager.getLogger(EditPageController.class);
+
     public void switchPage(MyFXController myFXController) {
         Page editPage = new Page("editPage");
         ViewManager.getInstance().setPage(editPage);
@@ -60,6 +65,7 @@ public class EditPageController {
             user.setEmail(prevEmail);
             user.setPhoneNumber(prevPhoneNumber);
             editPageEvent.getEditFXController().setError(error);
+            logger.info(error);
         }
         else {
             user.setFirstname(editPageEvent.getFirstname());
@@ -73,6 +79,7 @@ public class EditPageController {
                 imageID = Context.getInstance().getImageDB().saveIntoDB(editPageEvent.getAvatar());
             if(imageID != null)
                 user.setAvatar(imageID);
+            logger.info(String.format("user %s edited his profile", user.getUsername()));
             ViewManager.getInstance().back();
         }
     }

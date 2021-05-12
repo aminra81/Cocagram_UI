@@ -1,13 +1,18 @@
 package ir.sharif.aminra.view;
 
 import ir.sharif.aminra.config.Config;
+import ir.sharif.aminra.controller.enterPage.SignUpController;
 import ir.sharif.aminra.models.ID;
 import ir.sharif.aminra.view.mainPage.MainFXController;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Stack;
 
 public class ViewManager {
+
+    static private final Logger logger = LogManager.getLogger(SignUpController.class);
 
     private static ViewManager instance;
 

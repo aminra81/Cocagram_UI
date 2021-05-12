@@ -30,10 +30,12 @@ public class SettingsController {
     }
 
     public void deleteAccount(ID userID) {
+        String username = Context.getInstance().getUserDB().getByID(userID).getUsername();
         Context.getInstance().getTweetDB().deleteTweets(userID);
         Context.getInstance().getMessageDB().deleteMessages(userID);
         Context.getInstance().getChatDB().deleteChats(userID);
         Context.getInstance().getUserDB().deleteUser(userID);
+        logger.info(String.format("user %s deleted his/her account.", username));
         ViewManager.getInstance().setPage(new Page("enterPage"));
     }
 }
